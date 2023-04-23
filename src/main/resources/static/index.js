@@ -1,5 +1,6 @@
 const form = document.querySelector(".form");
 const showBtn = document.querySelector(".show-contacts-btn");
+const footer = document.querySelector("footer");
 
 form.addEventListener('submit', (e) => {
 
@@ -48,12 +49,11 @@ showBtn.addEventListener('click', () => {
   })
   .then(json => {
     console.log(json);
-    
-    addElement(json);
+    addElements(json);
   })
 });
 
-function addElement(object) {
+function addElements(object) {
 
   for (let i = 0; i < object.length; i++) {
     let newH2 = document.createElement("h2");
@@ -62,10 +62,13 @@ function addElement(object) {
   
     newH2.appendChild(newContent);
   
-    let main = document.querySelector("main");
-  
-    document.body.insertBefore(newH2, main);
-    
+    document.body.insertBefore(newH2, footer);
+  }
+}
+
+function removeAllChildren(parent) {
+  while (parent.firstChild) {
+      parent.removeChild(parent.firstChild);
   }
 }
 
