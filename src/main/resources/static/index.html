@@ -26,9 +26,36 @@
         <button type="submit">Create Contact</button>
     </form>
     <button class="show-contacts-btn">Show Registered Contacts</button>
-    </main>
-    <aside class="aside">
-    </aside>
-    <script src="index.js"></script>
+    <button class="options-button">Other Options</button>
+    <div class="modal hidden">
+      <button class="close-modal">X</button>
+      <h3>Enter the ID of the contact you want to delete:</h3>
+      <form class="deletion-form">
+        <label>
+          Id:
+          <input type="text" id="delete-input-id" name="delete-id" placeholder="Enter id here...">
+        </label>
+        <br>
+        <button class="delete-button">Delete Contact</button>
+      </form>
+      <h3>Enter the ID of the contact you want to update:</h3>
+      <form class="update-form">
+        <label>
+          New Name:
+          <input type="text" id="nameInput2" name="name2" placeholder="Enter name here...">
+        </label>
+        <br>
+        <label>
+          New Address:
+          <input type="text" id="addressInput2" name="address2" placeholder="Enter address here...">
+        </label>
+        <br>
+        <button type="submit">Something</button>
+      </form>
+    </div>
+  </main>
+  <aside class="aside">
+  </aside>
+  <script src="index.js"></script>
 </body>
 </html>

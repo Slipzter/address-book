@@ -33,11 +33,11 @@ main {
     border-color: inherit;
 }
 
-.form, .show-contacts-btn {
+.form, .delete, .show-contacts-btn {
     margin: 5% 20% 0;
 }
 
-.form {
+.form, .delete {
     display: flex;
 }
 
@@ -73,5 +73,35 @@ button {
 
 button:hover {
     transition: ease 0.3s;
+}
+
+.hidden {
+    visibility: hidden;
+}
+
+.modal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 40vh;
+    background-color: darkslateblue;
+    position: absolute;
+    left: 8vw;
+    border-radius: 5px;
+}
+
+.modal button {
+    transition: none;
+}
+
+.close-modal {
+    align-self: flex-end;
+    height: 20px;
+    width: 20px;
+    margin: 5px;
+}
+
+.modal h3 {
+    margin-top: 5%;
 }
 
