@@ -31,11 +31,11 @@ public class AddressBookController {
 //    @PutMapping("/{id}")
 //    public AddressBook updateContact(@PathVariable Long id, @RequestBody AddressBook contact) {
 //        contact.setId(id);
-//        return addressBookRepository.save(contact);
+//        return addressBook.save(contact);
 //    }
 //
 //    @DeleteMapping("/{id}")
 //    public void deleteContact(@PathVariable Long id) {
-//        addressBookRepository.deleteById(id);
+//        addressBook.deleteById(id);
 //    }
 }

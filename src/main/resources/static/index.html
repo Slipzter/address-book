@@ -9,23 +9,26 @@
     <base href="/"/>
 </head>
 <body>
-    <h1>Simple Address Book</h1>
-    <h3>To add a contact to the book, enter name and address below:</h3>
+  <main>
+    <h1 class="title">Simple Address Book</h1>
+    <h3>To add a contact to the book, enter name and address:</h3>
     <form class="form">
         <label>
           Name:
-          <input type="text" id="nameInput" name="name">
+          <input type="text" id="nameInput" name="name" placeholder="Enter name here...">
         </label>
         <br>
         <label>
           Address:
-          <input type="text" id="addressInput" name="address">
+          <input type="text" id="addressInput" name="address" placeholder="Enter address here...">
         </label>
         <br>
         <button type="submit">Create Contact</button>
-      </form>
-      <button class="show-contacts-btn">Show Registered Contacts</button>
-      <footer></footer>
+    </form>
+    <button class="show-contacts-btn">Show Registered Contacts</button>
+    </main>
+    <aside class="aside">
+    </aside>
     <script src="index.js"></script>
 </body>
 </html>

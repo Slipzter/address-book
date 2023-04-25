@@ -15,8 +15,7 @@ public class AddressBook {
     private String address;
 
     public AddressBook() {
-        this.name = "Joakim";
-        this.address = "Luftgatan 10";
+
     }
 
     public AddressBook(long id, String name, String address) {

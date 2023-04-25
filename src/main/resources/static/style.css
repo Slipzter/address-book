@@ -1,8 +1,36 @@
+* {
+    margin: 0;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+}
+
 body {
+    height: 300vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: none;
+    grid-auto-flow: row;
+    overflow: visible;
+}
+
+main {
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    height: 100vh;
+    width: 50vw;
+    background-color: rgb(19, 114, 109);
+    position: fixed;
+    /* background-image: url("images/2502408.png");
+    background-repeat: no-repeat;
+    background-size: cover; */
+}
+
+.title {
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: solid 1.2px;
+    border-color: inherit;
 }
 
 .form, .show-contacts-btn {
@@ -11,7 +39,39 @@ body {
 
 .form {
     display: flex;
+}
+
+aside {
+    display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-around;
+    background-color: rgba(9, 230, 219, 0.473);
+    padding: 2% 0;
+    height: 300vh;
+    width: 50vw;
+    position: absolute;
+    right: 0;
 }
+
+aside h1 {
+    margin-bottom: 5%;
+    padding-bottom: 10px;
+    border-bottom: solid 1.2px;
+    border-color: inherit;
+}
+
+aside h3 {
+    height: min-content;
+    margin-bottom: 10%;
+}
+
+button {
+    border-style: none;
+    border: rgb(28, 143, 137) solid 1px;
+    border-radius: 5px;
+}
+
+button:hover {
+    transition: ease 0.3s;
+}
+

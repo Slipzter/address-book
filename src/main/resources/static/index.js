@@ -1,7 +1,8 @@
 const form = document.querySelector(".form");
 const showBtn = document.querySelector(".show-contacts-btn");
-const footer = document.querySelector("footer");
+const aside = document.querySelector(".aside");
 
+// Stores user input as JSON objects
 form.addEventListener('submit', (e) => {
 
   const formData = new FormData();
@@ -18,7 +19,7 @@ fetch('http://localhost:8080/api/address-book', {
 })
   .then(response => {
     if (!response.ok) {
-      throw new Error('Failed to create contact');
+      throw new Error('Failed to POST data');
     }
     if (response.ok) {
       console.log("Fetch successful");
@@ -35,6 +36,7 @@ fetch('http://localhost:8080/api/address-book', {
   });
 });
 
+// Fetches stored JSON data, and calls addElements function
 showBtn.addEventListener('click', () => {
   fetch('http://localhost:8080/api/address-book', {
 })
@@ -53,20 +55,33 @@ showBtn.addEventListener('click', () => {
   })
 });
 
+// Displays stored JSON objects inside aside, and prints a title
+// Then calls removeAllChildNodes to reset the list every time showBtn is pressed
 function addElements(object) {
 
-  for (let i = 0; i < object.length; i++) {
-    let newH2 = document.createElement("h2");
+  removeAllChildNodes(aside);
 
-    let newContent = document.createTextNode("Name: " + object[i].name + ", " + "Address: " + object[i].address);
+  let newTitle = document.createElement("h1");
+
+  let h1Content = document.createTextNode("Contacts:");
+
+  newTitle.appendChild(h1Content);
+
+  aside.appendChild(newTitle);
+
+  for (let i = 0; i < object.length; i++) {
+    let newH3 = document.createElement("h3");
+
+    let newContent = document.createTextNode((i + 1) + ". " + "Name: " + object[i].name + ", " + "Address: " + object[i].address);
   
-    newH2.appendChild(newContent);
-  
-    document.body.insertBefore(newH2, footer);
+    newH3.appendChild(newContent);
+
+    aside.appendChild(newH3);
   }
 }
 
-function removeAllChildren(parent) {
+// Removes all children inside a parent
+function removeAllChildNodes(parent) {
   while (parent.firstChild) {
       parent.removeChild(parent.firstChild);
   }
