@@ -199,7 +199,7 @@ closeSearchModalBtn.addEventListener('click', () => {
   modal2.classList.add("hidden");
 });
 
-// TODO: Final styling
+// TODO: "Final" styling
 
 
 
