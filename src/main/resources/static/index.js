@@ -13,7 +13,7 @@ const searchResult2 = document.querySelector(".search-result2");
 const searchResult3 = document.querySelector(".search-result3");
 
 
-// Stores user input as JSON objects
+// Store user input as JSON objects
 form.addEventListener('submit', (e) => {
 
   const formData = new FormData();
@@ -44,7 +44,7 @@ form.addEventListener('submit', (e) => {
     })
 });
 
-// Fetches stored JSON data, and calls addElements function
+// Fetch stored JSON data, and call addElements function
 showBtn.addEventListener('click', () => {
   fetch('http://localhost:8080/api/address-book', {
 })
@@ -63,8 +63,8 @@ showBtn.addEventListener('click', () => {
   })
 });
 
-// Displays stored JSON objects inside aside, and prints a title
-// Then calls removeAllChildNodes to reset the list every time showBtn is pressed
+// Display stored JSON objects inside aside, and print title
+// Then call removeAllChildNodes to reset the list when showBtn is pressed
 function addElements(object) {
 
   removeAllChildNodes(aside);
@@ -88,20 +88,20 @@ function addElements(object) {
   }
 }
 
-// Removes all children inside a parent
+// Remove all children inside a parent
 function removeAllChildNodes(parent) {
   while (parent.firstChild) {
       parent.removeChild(parent.firstChild);
   }
 }
 
-// Opens options modal
+// Open options modal
 optionsBtn.addEventListener('click', () => {
   let modal = document.querySelector(".modal");
   modal.classList.remove("hidden");
 });
 
-// Closes options modal
+// Close options modal
 closeModalBtn.addEventListener('click', () => {
   let modal = document.querySelector(".modal");
   modal.classList.add("hidden");
@@ -194,12 +194,12 @@ searchBtn.addEventListener('click', (e) => {
   })
 });
 
+// Close search result modal
 closeSearchModalBtn.addEventListener('click', () => {
   let modal2 = document.querySelector(".search-modal");
   modal2.classList.add("hidden");
 });
 
-// TODO: "Final" styling
 
 
 

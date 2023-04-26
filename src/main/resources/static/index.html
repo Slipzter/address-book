@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
     <base href="/"/>
@@ -27,13 +28,15 @@
     </form>
     <button class="show-contacts-btn">Show Registered Contacts</button>
     <button class="options-button">Other Options</button>
+    <div class="bottom">By: Tim Hansson Meng<a href="https://github.com/Slipzter">
+      <i class="devicon-github-original"></i>
+    </a></div>
     <div class="modal hidden">
       <button class="close-modal">X</button>
       <h2>Find Contact</h2>
       <h4>Enter the name or address of the contact you want to find:</h4>
       <form class="search-form">
         <label>
-          Name/Address:
           <input type="text" id="search-input" name="search" placeholder="Enter name or address here...">
         </label>
         <br>
@@ -43,7 +46,6 @@
       <h4>Enter the ID of the contact you want to delete:</h4>
       <form class="deletion-form">
         <label>
-          Id:
           <input type="text" id="delete-input-id" name="delete-id" placeholder="Enter id here...">
         </label>
         <br>
@@ -53,17 +55,14 @@
       <h4>Enter the ID and new info of the contact you want to update:</h4>
       <form class="update-form">
         <label>
-          Id:
           <input type="text" id="idInputUpdate" name="idUpdate" placeholder="Enter id here...">
         </label>
         <label>
-          New Name:
-          <input type="text" id="nameInputUpdate" name="nameUpdate" placeholder="Enter name here...">
+          <input type="text" id="nameInputUpdate" name="nameUpdate" placeholder="Enter new name here...">
         </label>
         <br>
         <label>
-          New Address:
-          <input type="text" id="addressInputUpdate" name="addressUpdate" placeholder="Enter address here...">
+          <input type="text" id="addressInputUpdate" name="addressUpdate" placeholder="Enter new address here...">
         </label>
         <br>
         <button class="update-button">Update Contact</button>

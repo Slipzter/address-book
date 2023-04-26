@@ -26,6 +26,10 @@ button:hover {
     visibility: hidden;
 }
 
+main a i {
+    color: black;
+}
+
 /* -------------- MAIN -------------- */
 
 main {
@@ -37,9 +41,6 @@ main {
     width: 50vw;
     background-color: rgb(19, 114, 109);
     position: fixed;
-    /* background-image: url("images/2502408.png");
-    background-repeat: no-repeat;
-    background-size: cover; */
 }
 
 .title {
@@ -78,15 +79,24 @@ main {
     margin: 30px;
     display: flex;
     flex-direction: column;
-    align-items: center;
 }
 
 .modal input {
     width: 200px;
 }
 
-.modal button {
+.search-button, .delete-button, .update-button {
     margin-top: 10px;
+    width: max-content;
+    align-self: center;
+}
+
+#idInputUpdate {
+    margin-bottom: 20px;
+}
+
+.bottom {
+    margin-top: 10%;
 }
 
 /* -------------- ASIDE -------------- */
@@ -137,6 +147,7 @@ aside h3 {
     height: 40vh;
     width: 30vw;
     z-index: 1;
+    border-radius: 5px;
 }
 
 
