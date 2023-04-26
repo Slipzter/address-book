@@ -33,19 +33,21 @@ public class AddressBookController {
         return contact;
     }
 
-    //
+    // Adds new contact with incrementing id
     @PostMapping
     public void createNewContact(String name, String address) {
         AddressBook contact = new AddressBook(counter.incrementAndGet(), name, address);
         addressBook.add(contact);
     }
 
+    // Deletes contact based on id
     @DeleteMapping("/{id}")
     public void delete(@PathVariable long id) {
         AddressBook contact = addressBook.remove((int) id);
         if (contact == null) throw new ResponseStatusException(HttpStatus.NOT_FOUND);
     }
 
+    // Updates contact based on id
     @PutMapping("/{id}")
     public AddressBook updateContact(@PathVariable long id, String name, String address) {
         AddressBook updatedContact = addressBook.get((int) id);

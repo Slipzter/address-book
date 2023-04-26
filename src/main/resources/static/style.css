@@ -67,7 +67,7 @@ aside h3 {
 
 button {
     border-style: none;
-    border: rgb(28, 143, 137) solid 1px;
+    border: none;
     border-radius: 5px;
 }
 
@@ -83,18 +83,20 @@ button:hover {
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 40vh;
+    height: 60vh;
+    width: 35vw;
     background-color: darkslateblue;
     position: absolute;
     left: 8vw;
     border-radius: 5px;
+    z-index: 1;
 }
 
 .modal button {
     transition: none;
 }
 
-.close-modal {
+.close-modal, .close-search-modal {
     align-self: flex-end;
     height: 20px;
     width: 20px;
@@ -103,5 +105,22 @@ button:hover {
 
 .modal h3 {
     margin-top: 5%;
+}
+
+.search-modal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    right: 10vw;
+    top: 30vh;
+    background-color: red;
+    height: 40vh;
+    width: 30vw;
+    z-index: 1;
+}
+
+.search-modal button {
+    transition: none;
 }
 

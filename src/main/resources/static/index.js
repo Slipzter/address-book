@@ -5,7 +5,12 @@ const optionsBtn = document.querySelector(".options-button");
 const closeModalBtn = document.querySelector(".close-modal");
 const deleteBtn = document.querySelector(".delete-button");
 const updateBtn = document.querySelector(".update-button");
-
+const searchBtn = document.querySelector(".search-button");
+const searchModal = document.querySelector(".search-modal");
+const closeSearchModalBtn = document.querySelector(".close-search-modal");
+const searchResult1 = document.querySelector(".search-result1");
+const searchResult2 = document.querySelector(".search-result2");
+const searchResult3 = document.querySelector(".search-result3");
 
 
 // Stores user input as JSON objects
@@ -125,6 +130,7 @@ deleteBtn.addEventListener('click', (e) => {
   })
 });
 
+// Update contact
 updateBtn.addEventListener('click', (e) => {
   
   const formData = new FormData();
@@ -155,13 +161,44 @@ updateBtn.addEventListener('click', (e) => {
     })
 });
 
+// Find contact
+searchBtn.addEventListener('click', (e) => {
 
+  e.preventDefault();
 
+  let input = document.querySelector("#search-input").value;
 
+  searchModal.classList.remove("hidden");
 
+  fetch('http://localhost:8080/api/address-book', {
+})
+  .then(response => {
+    if (!response.ok) {
+      throw new Error('Failed to GET data');
+    }
+    if (response.ok) {
+      console.log("Fetch successful");
+    }
+    return response.json();
+  })
+  .then(json => {
+    console.log(json);
+    for (let i = 0; i < json.length; i++) {
+      if ((json[i].name).toUpperCase() == input.toUpperCase() || (json[i].address).toUpperCase() == input.toUpperCase()) {
+        console.log("Contact: " + json[i].name + ", " + json[i].address + ", Id: " + json[i].id);
+        searchResult1.innerHTML = "Id: " + json[i].id;
+        searchResult2.innerHTML = "Name: " + json[i].name;
+        searchResult3.innerHTML = "Address: " + json[i].address;
+      }
+    }
+  })
+});
 
-// TODO: PUT function
-// TODO: Search function
+closeSearchModalBtn.addEventListener('click', () => {
+  let modal2 = document.querySelector(".search-modal");
+  modal2.classList.add("hidden");
+});
+
 // TODO: Final styling
 
 

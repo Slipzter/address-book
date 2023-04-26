@@ -29,6 +29,16 @@
     <button class="options-button">Other Options</button>
     <div class="modal hidden">
       <button class="close-modal">X</button>
+      <h2>Find Contact</h2>
+      <h4>Enter the name or address of the contact you want to find:</h4>
+      <form class="search-form">
+        <label>
+          Name/Address:
+          <input type="text" id="search-input" name="search" placeholder="Enter name or address here...">
+        </label>
+        <br>
+        <button class="search-button">Search</button>
+    </form>
       <h2>Delete Contact</h2>
       <h4>Enter the ID of the contact you want to delete:</h4>
       <form class="deletion-form">
@@ -60,6 +70,13 @@
       </form>
     </div>
   </main>
+  <div class="search-modal hidden">
+    <button class="close-search-modal">X</button>
+    <h3>Contact found:</h3>
+    <h2 class="search-result1"></h2>
+    <h2 class="search-result2"></h2>
+    <h2 class="search-result3"></h2>
+  </div>
   <aside class="aside">
   </aside>
   <script src="index.js"></script>
