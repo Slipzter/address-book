@@ -4,6 +4,7 @@ const aside = document.querySelector(".aside");
 const optionsBtn = document.querySelector(".options-button");
 const closeModalBtn = document.querySelector(".close-modal");
 const deleteBtn = document.querySelector(".delete-button");
+const updateBtn = document.querySelector(".update-button");
 
 
 
@@ -124,7 +125,44 @@ deleteBtn.addEventListener('click', (e) => {
   })
 });
 
+updateBtn.addEventListener('click', (e) => {
+  
+  const formData = new FormData();
+  let inputId = (document.querySelector("#idInputUpdate").value) - 1;
+
+  e.preventDefault();
+
+  formData.append('name', document.querySelector('#nameInputUpdate').value);
+  formData.append('address', document.querySelector('#addressInputUpdate').value);
+
+  fetch('http://localhost:8080/api/address-book/' + inputId, {
+    method: 'PUT',
+    body: formData
+  })
+    .then(response => {
+      if (!response.ok) {
+        throw new Error('Failed to POST data');
+      }
+      if (response.ok) {
+        console.log("Fetch successful");
+      }
+      return response.json();
+    })
+    .then(data => {
+      returnData = data;
+      console.log(data);
+      console.log("Contact updated successfully")
+    })
+});
+
+
+
+
+
+
 // TODO: PUT function
+// TODO: Search function
+// TODO: Final styling
 
 
 

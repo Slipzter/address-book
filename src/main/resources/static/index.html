@@ -29,7 +29,8 @@
     <button class="options-button">Other Options</button>
     <div class="modal hidden">
       <button class="close-modal">X</button>
-      <h3>Enter the ID of the contact you want to delete:</h3>
+      <h2>Delete Contact</h2>
+      <h4>Enter the ID of the contact you want to delete:</h4>
       <form class="deletion-form">
         <label>
           Id:
@@ -38,19 +39,24 @@
         <br>
         <button class="delete-button">Delete Contact</button>
       </form>
-      <h3>Enter the ID of the contact you want to update:</h3>
+      <h2>Update Contact</h2>
+      <h4>Enter the ID and new info of the contact you want to update:</h4>
       <form class="update-form">
         <label>
+          Id:
+          <input type="text" id="idInputUpdate" name="idUpdate" placeholder="Enter id here...">
+        </label>
+        <label>
           New Name:
-          <input type="text" id="nameInput2" name="name2" placeholder="Enter name here...">
+          <input type="text" id="nameInputUpdate" name="nameUpdate" placeholder="Enter name here...">
         </label>
         <br>
         <label>
           New Address:
-          <input type="text" id="addressInput2" name="address2" placeholder="Enter address here...">
+          <input type="text" id="addressInputUpdate" name="addressUpdate" placeholder="Enter address here...">
         </label>
         <br>
-        <button type="submit">Something</button>
+        <button class="update-button">Update Contact</button>
       </form>
     </div>
   </main>

@@ -46,11 +46,13 @@ public class AddressBookController {
         if (contact == null) throw new ResponseStatusException(HttpStatus.NOT_FOUND);
     }
 
-    // TODO PutMapping
-//    @PutMapping("/{id}")
-//    public AddressBook updateContact(@PathVariable Long id, @RequestBody AddressBook contact) {
-//        contact.setId(id);
-//        return addressBook.save(contact);
-//    }
+    @PutMapping("/{id}")
+    public AddressBook updateContact(@PathVariable long id, String name, String address) {
+        AddressBook updatedContact = addressBook.get((int) id);
+        if (updatedContact == null) throw new ResponseStatusException(HttpStatus.NOT_FOUND);
+        updatedContact.setName(name);
+        updatedContact.setAddress(address);
+        return updatedContact;
+    }
 
 }
